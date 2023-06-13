@@ -19,7 +19,7 @@ export class ClassificaDettagliComponent extends Array  implements OnInit{
 
   idCampionato: any;
   campionatoDettagli: any;
-  imgCompetizione: string = '../../../assets/img/handshake.jpg';
+  imgCompetizione: string = '../../../assets/img/handshake.png';
   partecipantiCompetizione: any[] = [];
   displayedColumns: string[] = ['nome', 'cognome', 'eta'];
   displayedColumnsClassifica: T[] = ['nomeGiocatore', 'cognomeGiocatore', 'vittorie', 'pareggi', 'sconfitte', 'goalFatti', 'goalSubiti', 'tiriTotali', 'punti'];
@@ -66,7 +66,7 @@ export class ClassificaDettagliComponent extends Array  implements OnInit{
 
           default:
             this.campionatoDettagli.tipoCompetizione = 'CAMPIONATO AMICHEVOLE';
-            this.imgCompetizione = '../../../assets/img/handshake.jpg';
+            this.imgCompetizione = '../../../assets/img/handshake.png';
             break;
         }
       })

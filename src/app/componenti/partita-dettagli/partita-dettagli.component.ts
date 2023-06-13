@@ -14,7 +14,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 })
 export class PartitaDettagliComponent implements OnInit{
 
-  imgCompetizione: string = '../../../assets/img/handshake.jpg';
+  imgCompetizione: string = '../../../assets/img/handshake.png';
   imgGiocatoreCasa: string = '../../../assets/img/immagineprofilo.png';
   imgGiocatoreTrasferta: string = '../../../assets/img/immagineprofilo.png';
   mostraErrore: boolean = false;
@@ -116,7 +116,7 @@ export class PartitaDettagliComponent implements OnInit{
 
         default:
           this.partita.campionato.tipoCompetizione = 'CAMPIONATO AMICHEVOLE';
-          this.imgCompetizione = '../../../assets/img/handshake.jpg';
+          this.imgCompetizione = '../../../assets/img/handshake.png';
           break;
       }
       console.log('partita',this.partita);

@@ -38,7 +38,7 @@ export class GiocatoreDettagliComponent implements OnInit{
         console.log(giocatore);
         this.giocatoreDettagli = giocatore;
         if(this.giocatoreDettagli.immagineProfiloUrl == null){
-          this.giocatoreDettagli.immagineProfiloUrl = 'http://www.innovatoripa.it/sites/default/files/styles/user_full/public/default_images/765-default-avatar_4.png?itok=-1-90-7C'
+          this.giocatoreDettagli.immagineProfiloUrl = '../../../assets/img/immagineprofilo.png'
           console.log( this.giocatoreDettagli);
         }
       })

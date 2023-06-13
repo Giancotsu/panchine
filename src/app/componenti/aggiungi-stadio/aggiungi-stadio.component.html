@@ -1,0 +1,46 @@
+<div class="header">
+  <h1>AGGIUNGI STADIO</h1>
+</div>
+<div class="form">
+
+  <form class="example-form" [formGroup]="stadioForm" (ngSubmit)="onSubmit()">
+
+    <h2>STADIO</h2>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Nome stadio</mat-label>
+            <input matInput type="text" name="nome" formControlName="nome" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Posti</mat-label>
+            <input matInput type="number" name="posti" formControlName="posti" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Anno Costruzione</mat-label>
+            <input matInput type="number" name="annoCreazione" formControlName="annoCreazione" />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <button mat-fab extended color="primary" (click)="annulla()">
+      <mat-icon>clear</mat-icon>
+      Annulla
+    </button>
+
+    <button mat-fab extended color="primary" type="submit()" [disabled]="!stadioForm.valid" >
+      <mat-icon>add</mat-icon>
+      Aggiungi
+    </button>
+
+  </form>
+
+</div>
+

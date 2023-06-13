@@ -1,0 +1,32 @@
+<div class="seven">
+  <h1>Partite</h1>
+</div>
+<div id="tabPartite">
+  <table *ngIf="partiteCaricate" class="TableEfx">
+    <tr>
+      <th *ngFor="let col of displayedColumns" class="header">
+        {{col | uppercase}}
+      </th>
+    </tr>
+    <tr *ngFor="let row of partiteIC; index as i" (click)="dettagliPartita(partiteIC[i].partita.idPartita)">
+      <td>
+        {{partiteIC[i].giocatore.nome}} {{partiteIC[i].giocatore.cognome}}
+      </td>
+      <td>
+        {{partiteIC[i].goalFatti}} - {{partiteFC[i].goalFatti}}
+      </td>
+      <td>
+        {{partiteFC[i].giocatore.nome}} {{partiteFC[i].giocatore.cognome}}
+      </td>
+      <td>
+        {{partiteIC[i].partita.dataPartita}} {{partiteIC[i].partita.calcioInizio}}
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div class="example-button-container add-partita" *ngIf="isAdmin">
+  <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="creaPartita()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

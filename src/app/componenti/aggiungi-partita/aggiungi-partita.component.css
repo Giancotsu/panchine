@@ -1,0 +1,77 @@
+
+.center{
+  text-align: center;
+  font-size: medium;
+  font-weight: bolder;
+}
+
+h1{
+  text-align: center;
+  padding: 30px;
+  font-size: xx-large;
+  font-weight: bolder;
+  margin: 0px;
+}
+
+.header{
+  text-align: center;
+  background-color: #3f51b5;
+  color: white;
+}
+
+.menu-bottoni{
+
+  display: flex;
+  width: min-content;
+  margin: auto;
+}
+
+.menu-bottoni button {
+  background-color: #3f51b5;
+  border: 2px solid black;
+  margin: 10px;
+  color: white;
+}
+
+.form{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.selectField {
+  width: 330px;
+}
+
+td {
+  padding-right: 8px;
+  padding-top: 5px;
+}
+
+button{
+  margin: 20px 5px 0px 5px
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 700px;
+  width: 100%;
+}
+
+h2{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+div{
+  width: 60%;
+  margin: auto;
+}

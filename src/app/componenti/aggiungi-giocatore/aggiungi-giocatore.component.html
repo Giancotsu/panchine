@@ -1,0 +1,295 @@
+<div class="header">
+  <h1>AGGIUNGI GIOCATORE</h1>
+</div>
+<div class="form">
+
+  <form class="example-form" [formGroup]="giocatoreForm" (ngSubmit)="onSubmit()">
+
+    <h2>GENERALITA'</h2>
+
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" name="nome" formControlName="nome" />
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Cognome</mat-label>
+        <input matInput type="text" name="cognome" formControlName="cognome" />
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Età</mat-label>
+        <input matInput type="number" name="eta" formControlName="eta" />
+      </mat-form-field></td>
+    </tr></table>
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>URL Immagine Profilo</mat-label>
+        <input matInput type="text" name="immagineProfiloUrl" formControlName="immagineProfiloUrl">
+      </mat-form-field>
+    </p>
+
+    <h2>STATISTICHE</h2>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>velocita</mat-label>
+          <input matInput type="number" name="velocita" formControlName="velocita" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Finalizzazione</mat-label>
+          <input matInput type="number" name="finalizzazione" formControlName="finalizzazione" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Potenza tiro</mat-label>
+          <input matInput type="number" name="potenzaTiro" formControlName="potenzaTiro" />
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Tiro Dalla Distanza</mat-label>
+          <input matInput type="number" name="tiroDistanza" formControlName="tiroDistanza" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Tiro Al Volo</mat-label>
+          <input matInput type="number" name="tiroVolo" formControlName="tiroVolo" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Rigori</mat-label>
+          <input matInput type="number" name="rigori" formControlName="rigori" />
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Precisione Tiro</mat-label>
+          <input matInput type="number" name="precisioneTiro" formControlName="precisioneTiro" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Dribbling</mat-label>
+          <input matInput type="number" name="dribbling" formControlName="dribbling" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Intercettazione</mat-label>
+          <input matInput type="number" name="intercettazione" formControlName="intercettazione" />
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Contrasto</mat-label>
+          <input matInput type="number" name="contrasto" formControlName="contrasto" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Resistenza</mat-label>
+          <input matInput type="number" name="resistenza" formControlName="resistenza" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Forza Fisica</mat-label>
+          <input matInput type="number" name="forzaFisica" formControlName="forzaFisica" />
+        </mat-form-field></td>
+      </tr>
+    </table>
+
+
+    <h2>CARRIERA</h2>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>scudetti</mat-label>
+          <input matInput type="number" name="scudetti" formControlName="scudetti" />
+        </mat-form-field></td>
+
+        <td><mat-form-field class="example-full-width">
+          <mat-label>champions</mat-label>
+          <input matInput type="number" name="champions" formControlName="champions" />
+        </mat-form-field></td>
+
+        <td><mat-form-field class="example-full-width">
+          <mat-label>coppe</mat-label>
+          <input matInput type="number" name="coppe" formControlName="coppe" />
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>partiteGiocate</mat-label>
+          <input matInput type="number" name="partiteGiocate" formControlName="partiteGiocate" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>vittorie</mat-label>
+          <input matInput type="number" name="vittorie" formControlName="vittorie" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>pareggi</mat-label>
+          <input matInput type="number" name="pareggi" formControlName="pareggi" />
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>sconfitte</mat-label>
+          <input matInput type="number" name="sconfitte" formControlName="sconfitte" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>goalFatti</mat-label>
+          <input matInput type="number" name="goalFatti" formControlName="goalFatti" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>goalSubiti</mat-label>
+          <input matInput type="number" name="goalSubiti" formControlName="goalSubiti" />
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>partiteGiocateA</mat-label>
+          <input matInput type="number" name="partiteGiocateA" formControlName="partiteGiocateA" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>vittorieA</mat-label>
+          <input matInput type="number" name="vittorieA" formControlName="vittorieA" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>pareggiA</mat-label>
+          <input matInput type="number" name="pareggiA" formControlName="pareggiA" />
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>sconfitteA</mat-label>
+          <input matInput type="number" name="sconfitteA" formControlName="sconfitteA" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>goalFattiA</mat-label>
+          <input matInput type="number" name="goalFattiA" formControlName="goalFattiA" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>goalSubitiA</mat-label>
+          <input matInput type="number" name="goalSubitiA" formControlName="goalSubitiA" />
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>puntiA</mat-label>
+          <input matInput type="number" name="puntiA" formControlName="puntiA"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>puntiChamp</mat-label>
+          <input matInput type="number" name="puntiChamp" formControlName="puntiChamp"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>partiteGiocateChamp</mat-label>
+          <input matInput type="number" name="partiteGiocateChamp" formControlName="partiteGiocateChamp"/>
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>vittorieChamp</mat-label>
+          <input matInput type="number" name="vittorieChamp" formControlName="vittorieChamp"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>pareggiChamp</mat-label>
+          <input matInput type="number" name="pareggiChamp" formControlName="pareggiChamp"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>sconfitteChamp</mat-label>
+          <input matInput type="number" name="sconfitteChamp" formControlName="sconfitteChamp"/>
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>goalFattiChamp</mat-label>
+          <input matInput type="number" name="goalFattiChamp" formControlName="goalFattiChamp"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>goalSubitiChamp</mat-label>
+          <input matInput type="number" name="goalSubitiChamp" formControlName="goalSubitiChamp"/>
+        </mat-form-field></td>
+      </tr>
+    </table>
+
+    <h2>RECORD</h2>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalFattiFila</mat-label>
+          <input matInput type="number" name="recordGoalFattiFila" formControlName="recordGoalFattiFila" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalSubitiFila</mat-label>
+          <input matInput type="number" name="recordGoalSubitiFila" formControlName="recordGoalSubitiFila" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalFattiFilaPartita</mat-label>
+          <input matInput type="number" name="recordGoalFattiFilaPartita" formControlName="recordGoalFattiFilaPartita" />
+        </mat-form-field></td>
+      <tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalSubitiFilaPartita</mat-label>
+          <input matInput type="number" name="recordGoalSubitiFilaPartita" formControlName="recordGoalSubitiFilaPartita" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalFattiPartita</mat-label>
+          <input matInput type="number" name="recordGoalFattiPartita" formControlName="recordGoalFattiPartita" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalSubitiPartita</mat-label>
+          <input matInput type="number" name="recordGoalSubitiPartita" formControlName="recordGoalSubitiPartita" />
+        </mat-form-field></td>
+      <tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalPunizione</mat-label>
+          <input matInput type="number" name="recordGoalPunizione" formControlName="recordGoalPunizione" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalRigore</mat-label>
+          <input matInput type="number" name="recordGoalRigore" formControlName="recordGoalRigore" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>doubleGoal</mat-label>
+          <input matInput type="number" name="doubleGoal" formControlName="doubleGoal" />
+        </mat-form-field></td>
+      <tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>multiGoal</mat-label>
+          <input matInput type="number" name="multiGoal" formControlName="multiGoal" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>ultraGoal</mat-label>
+          <input matInput type="number" name="ultraGoal" formControlName="ultraGoal" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>fantasticGoal</mat-label>
+          <input matInput type="number" name="fantasticGoal" formControlName="fantasticGoal" />
+        </mat-form-field></td>
+      <tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>unbelievableGoal</mat-label>
+          <input matInput type="number" name="unbelievableGoal" formControlName="unbelievableGoal" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>unbelievablePlusGoal</mat-label>
+          <input matInput type="number" name="unbelievablePlusGoal" formControlName="unbelievablePlusGoal" />
+        </mat-form-field></td>
+
+      <tr>
+    </table>
+
+    <button mat-fab extended color="primary" (click)="annulla()">
+      <mat-icon>clear</mat-icon>
+      Annulla
+    </button>
+
+    <button mat-fab extended color="primary" type="submit()" [disabled]="!giocatoreForm.valid" >
+      <mat-icon>add</mat-icon>
+      Aggiungi
+    </button>
+
+  </form>
+  <mat-spinner *ngIf="caricamento"></mat-spinner>
+
+</div>
+

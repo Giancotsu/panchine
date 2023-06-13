@@ -1,0 +1,74 @@
+table {
+  width: 100%;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+
+.example-card {
+  max-width: 50%;
+  margin: auto;
+  border: 3px;
+}
+
+.example-header-image {
+  background-image: url('http://www.innovatoripa.it/sites/default/files/styles/user_full/public/default_images/765-default-avatar_4.png?itok=-1-90-7C');
+  background-size: cover;
+}
+
+.center{
+  text-align: center;
+  font-size: medium;
+  font-weight: bolder;
+}
+
+h1{
+  text-align: center;
+  padding: 30px;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+h2{
+  color: #3f51b5;
+  text-align: center;
+  padding: 10px;
+  font-size: large;
+  font-weight: bolder;
+}
+
+.header{
+  background-color: #3f51b5;
+  color: white;
+}
+
+.menu-bottoni{
+  display: flex;
+  width: min-content;
+  margin: auto;
+}
+
+.menu-bottoni button {
+  background-color: #3f51b5;
+  border: 2px solid black;
+  margin: 10px;
+  color: white;
+}
+
+.errore{
+  margin: 10px auto 10px auto;
+  color: red;
+  border: 2px solid red;
+  width: 400px;
+}

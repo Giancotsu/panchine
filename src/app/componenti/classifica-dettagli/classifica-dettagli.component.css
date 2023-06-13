@@ -1,0 +1,53 @@
+table {
+  width: 95%;
+  margin: auto;
+  table-layout: fixed;
+}
+
+th {
+  height: 50px;
+}
+
+td {
+  text-align: center;
+  font-size: larger;
+  font-weight: bolder;
+  border-right: 3px solid #3f51b5;
+  border-left: 3px solid #3f51b5;
+  border-bottom: 3px solid #3f51b5;
+  padding: 5px;
+}
+
+.header{
+  background-color: #3f51b5;
+  color: white;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.mat-tab-group {
+  margin-bottom: 48px;
+  padding-bottom: 30px;
+}
+
+.example-card{
+  min-height: 650px;
+}
+
+.tastoIndietro{
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.caricaClassifica{
+  width: 33%;
+  margin-top: 50px;
+  margin-left: 30%;
+
+}
+
+.TableEfx tr:hover {
+  background-color: rgba(49, 130, 246, 0.2);
+  cursor: pointer;
+}

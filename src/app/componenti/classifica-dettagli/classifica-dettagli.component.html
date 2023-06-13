@@ -1,0 +1,72 @@
+<mat-card class="example-card">
+  <mat-card-header class="header">
+    <div mat-card-avatar [ngStyle]="{'background-image': 'url(' + imgCompetizione + ')', 'background-size': 'cover'  }" ></div>
+    <mat-card-title>{{campionatoDettagli.tipoCompetizione}}</mat-card-title>
+    <mat-card-subtitle class="header">{{campionatoDettagli.edizioneCampionato}} Edizione</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-tab-group animationDuration="1000ms">
+      <mat-tab label="classifica">
+
+        <table class="TableEfx">
+          <tr>
+            <th *ngFor="let col of tabellaClassifica" class="header">
+              {{col | uppercase}}
+            </th>
+          </tr>
+          <tr *ngFor="let row of classifica">
+            <td *ngFor="let col of displayedColumnsClassifica">
+              {{row[col]}}
+            </td>
+          </tr>
+        </table>
+
+      </mat-tab>
+      <mat-tab label="partite">
+
+        <table *ngIf="partiteCaricate" class="TableEfx">
+          <tr>
+            <th *ngFor="let col of tabellaPartite" class="header">
+              {{col | uppercase}}
+            </th>
+          </tr>
+          <tr *ngFor="let row of partiteIC; index as i" (click)="dettagliPartita(partiteIC[i].partita.idPartita)">
+            <td>
+              {{partiteIC[i].giocatore.nome}} {{partiteIC[i].giocatore.cognome}}
+            </td>
+            <td>
+              {{partiteIC[i].goalFatti}} - {{partiteFC[i].goalFatti}}
+            </td>
+            <td>
+              {{partiteFC[i].giocatore.nome}} {{partiteFC[i].giocatore.cognome}}
+            </td>
+            <td>
+              {{partiteIC[i].partita.dataPartita}} - {{partiteIC[i].partita.calcioInizio}}
+            </td>
+          </tr>
+        </table>
+
+      </mat-tab>
+      <mat-tab label="partecipanti" class="center">
+        <table class="TableEfx">
+          <tr>
+            <th *ngFor="let col of displayedColumns" class="header">
+              {{col | uppercase}}
+            </th>
+          </tr>
+          <tr *ngFor="let row of partecipantiCompetizione; index as i" (click)="dettagliGiocatore(row.idGiocatore)">
+            <td *ngFor="let col of displayedColumns">
+              {{row[col]}}
+            </td>
+          </tr>
+        </table>
+
+      </mat-tab>
+      <mat-tab label="statistiche">STATISTICHE</mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+
+  <mat-card-actions class="tastoIndietro">
+    <button mat-button (click)="tornaIndietro()"><mat-icon>arrow_back_ios</mat-icon></button>
+  </mat-card-actions>
+</mat-card>

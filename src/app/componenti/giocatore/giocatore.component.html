@@ -1,0 +1,46 @@
+<div class="seven">
+  <h1>Giocatori</h1>
+</div>
+<div>
+  <table mat-table [dataSource]="giocatori" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Nome Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef class="header"> Nome </th>
+      <td mat-cell *matCellDef="let giocatori"> {{giocatori.nome}} </td>
+    </ng-container>
+
+    <!-- Cognome Column -->
+    <ng-container matColumnDef="cognome">
+      <th mat-header-cell *matHeaderCellDef class="header"> Cognome </th>
+      <td mat-cell *matCellDef="let giocatori"> {{giocatori.cognome}} </td>
+    </ng-container>
+
+    <!-- eta Column -->
+    <ng-container matColumnDef="eta">
+      <th mat-header-cell *matHeaderCellDef class="header"> Età </th>
+      <td mat-cell *matCellDef="let giocatori"> {{giocatori.eta}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header"></tr>
+    <!--<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>-->
+    <tr
+        mat-row
+        (click)="vediDettagli(giocatore)"
+        [class.demo-row-is-clicked]
+        *matRowDef="let giocatore; columns: displayedColumns;"
+    ></tr>
+  </table>
+
+  <div class="example-button-container add-giocatore" *ngIf="isAdmin">
+    <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="creaGiocatore()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>
+
+
+

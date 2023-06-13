@@ -1,0 +1,291 @@
+<div class="header">
+  <h1>AGGIUNGI PARTITA</h1>
+</div>
+<div class="form">
+
+  <form class="example-form" [formGroup]="partitaform" (ngSubmit)="onSubmit()">
+
+    <h2>PARTITA</h2>
+
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Data partita</mat-label>
+        <input matInput [matDatepicker]="picker"  name="dataPartita" formControlName="dataPartita">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field></td>
+
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Calcio d'inizio</mat-label>
+        <input type="time" matInput name="week" min="08:00" max="21:00" name="calcioInizio" formControlName="calcioInizio">
+     </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Durata partita</mat-label>
+        <input matInput type="number" name="durataPartita" formControlName="durataPartita" />
+      </mat-form-field></td>
+    </tr></table>
+    <tr>
+      <td>
+        <mat-form-field class="selectField">
+          <mat-label>Campionato</mat-label>
+          <mat-select name="campionato" formControlName="campionato">
+            <mat-option *ngFor="let campionato of campionati" [value]="campionato">
+              {{campionato.tipoCompetizione}}: {{campionato.edizioneCampionato}}' Edizione
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="selectField">
+          <mat-label>Stadio</mat-label>
+          <mat-select name="stadio" formControlName="stadio">
+            <mat-option *ngFor="let stadio of stadi" [value]="stadio">
+              {{stadio.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+
+    <h2>RISULTATI</h2>
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>Giocatore</mat-label>
+            <mat-select name="giocatoreIC" formControlName="giocatoreIC">
+              <mat-option *ngFor="let giocatore of giocatori" [value]="giocatore">
+                {{giocatore.nome}} {{giocatore.cognome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td class="example-full-width center">
+          <p>Giocatori</p>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>Giocatore</mat-label>
+            <mat-select name="giocatoreFC" formControlName="giocatoreFC">
+              <mat-option *ngFor="let giocatore of giocatori" [value]="giocatore">
+                {{giocatore.nome}} {{giocatore.cognome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Goal Fatti In Casa</mat-label>
+          <input matInput type="number" name="goalFattiIC" formControlName="goalFattiIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>Goal Fatti</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Goal Fatti Fuori Casa</mat-label>
+          <input matInput type="number" name="goalFattiFC" formControlName="goalFattiFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Goal Subiti In Casa</mat-label>
+          <input matInput type="number" name="goalSubitiIC" formControlName="goalSubitiIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>Goal Subiti</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Goal Subiti Fuori Casa</mat-label>
+          <input matInput type="number" name="goalSubitiFC" formControlName="goalSubitiFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Tiri Totali In Casa</mat-label>
+          <input matInput type="number" name="tiriTotaliIC" formControlName="tiriTotaliIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>Tiri Totali</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Tiri Totali Fuori Casa</mat-label>
+          <input matInput type="number" name="tiriTotaliFC" formControlName="tiriTotaliFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Tiri in porta In Casa</mat-label>
+          <input matInput type="number" name="tiriPortaIC" formControlName="tiriPortaIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>Tiri in porta</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Tiri in porta Fuori Casa</mat-label>
+          <input matInput type="number" name="tiriPortaFC" formControlName="tiriPortaFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Pali In Casa</mat-label>
+          <input matInput type="number" name="paliIC" formControlName="paliIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>Pali</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Pali Fuori Casa</mat-label>
+          <input matInput type="number" name="paliFC" formControlName="paliFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Punizioni In Casa</mat-label>
+          <input matInput type="number" name="punizioniIC" formControlName="punizioniIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>Punizioni</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Punizioni Fuori Casa</mat-label>
+          <input matInput type="number" name="punizioniFC" formControlName="punizioniFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Rigori In Casa</mat-label>
+          <input matInput type="number" name="rigoriIC" formControlName="rigoriIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>Rigori</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Rigori Fuori Casa</mat-label>
+          <input matInput type="number" name="rigoriFC" formControlName="rigoriFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>DoubleGoal In Casa</mat-label>
+          <input matInput type="number" name="doubleGoalIC" formControlName="doubleGoalIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>DoubleGoal</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>DoubleGoal Fuori Casa</mat-label>
+          <input matInput type="number" name="doubleGoalFC" formControlName="doubleGoalFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>MultiGoal In Casa</mat-label>
+          <input matInput type="number" name="multiGoalIC" formControlName="multiGoalIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>MultiGoal</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>MultiGoal Fuori Casa</mat-label>
+          <input matInput type="number" name="multiGoalFC" formControlName="multiGoalFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>UltraGoal In Casa</mat-label>
+          <input matInput type="number" name="ultraGoalIC" formControlName="ultraGoalIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>UltraGoal</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>UltraGoal Fuori Casa</mat-label>
+          <input matInput type="number" name="ultraGoalFC" formControlName="ultraGoalFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>FantasticGoal In Casa</mat-label>
+          <input matInput type="number" name="fantasticGoalIC" formControlName="fantasticGoalIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>FantasticGoal</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>FantasticGoal Fuori Casa</mat-label>
+          <input matInput type="number" name="fantasticGoalFC" formControlName="fantasticGoalFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>UnbelievableGoal In Casa</mat-label>
+          <input matInput type="number" name="unbelievableGoalIC" formControlName="unbelievableGoalIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>UnbelievableGoal</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>UnbelievableGoal Fuori Casa</mat-label>
+          <input matInput type="number" name="unbelievableGoalFC" formControlName="unbelievableGoalFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>UnbelievablePlusGoal In Casa</mat-label>
+          <input matInput type="number" name="unbelievablePlusGoalIC" formControlName="unbelievablePlusGoalIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>UnbelievablePlusGoal</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>UnbelievablePlusGoal Fuori Casa</mat-label>
+          <input matInput type="number" name="unbelievablePlusGoalFC" formControlName="unbelievablePlusGoalFC" />
+        </mat-form-field></td>
+      </tr>
+
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>GoalMinutoIC In Casa</mat-label>
+          <input matInput type="text" name="goalMinutoIC" formControlName="goalMinutoIC" />
+        </mat-form-field></td>
+        <td class="example-full-width center">
+          <p>Goal Minuto</p>
+        </td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>GoalMinutoIC Fuori Casa</mat-label>
+          <input matInput type="text" name="goalMinutoFC" formControlName="goalMinutoFC" />
+        </mat-form-field></td>
+      </tr>
+
+    </table>
+
+    <button mat-fab extended color="primary" (click)="annulla()">
+      <mat-icon>clear</mat-icon>
+      Annulla
+    </button>
+
+    <button mat-fab extended color="primary" type="submit()" [disabled]="!partitaform.valid" >
+      <mat-icon>add</mat-icon>
+      Aggiungi
+    </button>
+
+  </form>
+  <mat-spinner *ngIf="caricamento"></mat-spinner>
+
+</div>
+

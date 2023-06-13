@@ -1,0 +1,50 @@
+<div class="header">
+  <h1>AGGIUNGI CAMPIONATO</h1>
+</div>
+<div class="form">
+
+  <form class="example-form" [formGroup]="campionatoForm" (ngSubmit)="onSubmit()">
+
+    <h2>CAMPIONATO</h2>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field>
+            <mat-label>Tipo Competizione</mat-label>
+            <mat-select name="tipoCompetizione" formControlName="tipoCompetizione">
+              <mat-option value=0>AMICHEVOLE</mat-option>
+              <mat-option value=1>SERIE A</mat-option>
+              <mat-option value=2>CHAMPIONS LEAGUE</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Edizione Campionato</mat-label>
+            <input matInput type="number" name="edizioneCampionato" formControlName="edizioneCampionato" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Numero Partite</mat-label>
+            <input matInput type="number" name="numPartite" formControlName="numPartite" />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <button mat-fab extended color="primary" (click)="annulla()">
+      <mat-icon>clear</mat-icon>
+      Annulla
+    </button>
+
+    <button mat-fab extended color="primary" type="submit()" [disabled]="!campionatoForm.valid" >
+      <mat-icon>add</mat-icon>
+      Aggiungi
+    </button>
+
+  </form>
+
+</div>
+

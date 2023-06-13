@@ -1,0 +1,108 @@
+<mat-card class="example-card">
+  <mat-card-header class="header">
+    <div mat-card-avatar [ngStyle]="{'background-image': 'url(' + imgCompetizione + ')', 'background-size': 'cover'  }" ></div>
+    <mat-card-title>{{partita.campionato.tipoCompetizione}}</mat-card-title>
+    <mat-card-subtitle class="header">Data: {{partita.dataPartita}}, Calcio d'inizio: {{partita.calcioInizio}}</mat-card-subtitle>
+    <mat-card-subtitle class="header">{{partita.stadio.nome}}</mat-card-subtitle>
+    <mat-card-subtitle class="header">Durata partita: {{partita.durataPartita}} minuti</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+
+    <div class="wrap">
+      <div class="column column-a">
+        <div class="row">
+          <div mat-card-avatar [ngStyle]="{'background-image': 'url(' + imgGiocatoreCasa + ')', 'background-size': 'cover'  }" ></div>
+          <div>{{inCasa.giocatore.nome}} {{inCasa.giocatore.cognome}}</div>
+        </div>
+
+        <div class="content">
+          <p>{{inCasa.tiriTotali}}</p>
+          <p>{{inCasa.tiriPorta}}</p>
+          <p>{{inCasa.pali}}</p>
+          <p>{{inCasa.punizioni}}</p>
+          <p>{{inCasa.rigori}}</p>
+          <p>{{inCasa.doubleGoal}}</p>
+          <p>{{inCasa.multiGoal}}</p>
+          <p>{{inCasa.ultraGoal}}</p>
+          <p>{{inCasa.fantasticGoal}}</p>
+          <p>{{inCasa.unbelievableGoal}}</p>
+          <p>{{inCasa.unbelievablePlusGoal}}</p>
+
+          <div *ngFor="let goal of inCasa.goalMinuto; index as i" id="goalMinCasa">
+            Goal al {{goal}}' minuto
+          </div>
+        </div>
+      </div>
+
+      <div class="column column-b">
+        <div id="risultato">
+          <div>
+            {{inCasa.goalFatti}}
+          </div>
+          <div>
+             -
+          </div>
+          <div>
+            {{fuoriCasa.goalFatti}}
+          </div>
+        </div>
+
+        <div class="content">
+          <p>Tiri totali</p>
+          <p>Tiri in porta</p>
+          <p>pali</p>
+          <p>punizioni</p>
+          <p>rigori</p>
+          <p>Double Goal</p>
+          <p>Multi Goal</p>
+          <p>Ultra Goal</p>
+          <p>Fantastic Goal</p>
+          <p>Unbelievable Goal</p>
+          <p>Unbelievable Plus Goal</p>
+        </div>
+      </div>
+
+      <div class="column column-c">
+        <div class="row">
+          <div mat-card-avatar [ngStyle]="{'background-image': 'url(' + imgGiocatoreTrasferta + ')', 'background-size': 'cover'  }" ></div>
+          <div>{{fuoriCasa.giocatore.nome}} {{fuoriCasa.giocatore.cognome}}</div>
+        </div>
+
+        <div class="content">
+          <p>{{fuoriCasa.tiriTotali}}</p>
+          <p>{{fuoriCasa.tiriPorta}}</p>
+          <p>{{fuoriCasa.pali}}</p>
+          <p>{{fuoriCasa.punizioni}}</p>
+          <p>{{fuoriCasa.rigori}}</p>
+          <p>{{fuoriCasa.doubleGoal}}</p>
+          <p>{{fuoriCasa.multiGoal}}</p>
+          <p>{{fuoriCasa.ultraGoal}}</p>
+          <p>{{fuoriCasa.fantasticGoal}}</p>
+          <p>{{fuoriCasa.unbelievableGoal}}</p>
+          <p>{{fuoriCasa.unbelievablePlusGoal}}</p>
+
+          <div *ngFor="let goal of fuoriCasa.goalMinuto; index as i" id="goalMinTrasferta">
+            Goal al {{goal}}' minuto
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </mat-card-content>
+
+  <p class="center errore" *ngIf="mostraErrore">Non si può eliminare</p>
+
+  <div class="menu-bottoni" *ngIf="isAdmin">
+    <button mat-fab extended color="primary" (click)="modificaPartita()">
+      <mat-icon>edit</mat-icon>
+      Modifica
+    </button>
+    <button mat-fab extended color="primary" (click)="eliminaPartita()">
+      <mat-icon>delete</mat-icon>
+      Elimina
+    </button>
+  </div>
+  <mat-card-actions>
+    <button mat-button (click)="tornaIndietro()"><mat-icon>arrow_back_ios</mat-icon></button>
+  </mat-card-actions>
+</mat-card>

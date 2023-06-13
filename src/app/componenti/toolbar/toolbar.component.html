@@ -1,0 +1,46 @@
+<p>
+  <mat-toolbar color="primary">
+
+    <button mat-button routerLink="homepage" [routerLinkActive]="'active'"><mat-icon>stadium</mat-icon><span>Panchine</span></button>
+
+
+    <div class="menu" *ngIf="loggedIn">
+      <button mat-button routerLink="classifica" [routerLinkActive]="'active'">Classifica</button>
+      <button mat-button routerLink="partite" [routerLinkActive]="'active'">Partite</button>
+      <button mat-button routerLink="giocatori" [routerLinkActive]="'active'">Giocatori</button>
+      <button mat-button routerLink="stadio" [routerLinkActive]="'active'">Stadio</button>
+    </div>
+
+    <div class="menu" *ngIf="!loggedIn">
+      <button mat-button routerLink="login">Classifica</button>
+      <button mat-button routerLink="login">Partite</button>
+      <button mat-button routerLink="login">Giocatori</button>
+      <button mat-button routerLink="login">Stadio</button>
+    </div>
+
+
+    <span class="example-spacer"></span>
+
+    <div class="example-button-row">
+      <button *ngIf="!this.loggedIn" mat-raised-button routerLink="login">
+        <mat-icon>login</mat-icon>
+        Join
+      </button>
+
+      <button *ngIf="!this.loggedIn" mat-raised-button routerLink="register">
+        <mat-icon>app_registration</mat-icon>
+        Sign In
+      </button>
+
+      <button *ngIf="this.loggedIn" mat-raised-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Logout
+      </button>
+    </div>
+  </mat-toolbar>
+</p>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+

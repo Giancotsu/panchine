@@ -1,0 +1,300 @@
+<div class="header">
+  <h1>MODIFICA GIOCATORE</h1>
+</div>
+<div class="form">
+
+  <form class="example-form" [formGroup]="giocatoreForm" (ngSubmit)="onSubmit()">
+
+    <h2>GENERALITA'</h2>
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>ID GIOCATORE</mat-label>
+        <input matInput type="number" name="idGiocatore" formControlName="idGiocatore" [(ngModel)]="initGiocatore.idGiocatore" />
+      </mat-form-field>
+    </p>
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" name="nome" formControlName="nome" [(ngModel)]="initGiocatore.nome"/>
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Cognome</mat-label>
+        <input matInput type="text" name="cognome" formControlName="cognome" [(ngModel)]="initGiocatore.cognome"/>
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Età</mat-label>
+        <input matInput type="number" name="eta" formControlName="eta" [(ngModel)]="initGiocatore.eta"/>
+      </mat-form-field></td>
+    </tr></table>
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>URL Immagine Profilo</mat-label>
+        <input matInput type="text" name="immagineProfiloUrl" formControlName="immagineProfiloUrl" [(ngModel)]="initGiocatore.immagineProfiloUrl">
+      </mat-form-field>
+    </p>
+
+    <h2>STATISTICHE</h2>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>velocita</mat-label>
+          <input matInput type="number" name="velocita" formControlName="velocita" [(ngModel)]="initGiocatore.statistiche.velocita"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Finalizzazione</mat-label>
+          <input matInput type="number" name="finalizzazione" formControlName="finalizzazione" [(ngModel)]="initGiocatore.statistiche.finalizzazione"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Potenza tiro</mat-label>
+          <input matInput type="number" name="potenzaTiro" formControlName="potenzaTiro" [(ngModel)]="initGiocatore.statistiche.potenzaTiro"/>
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Tiro Dalla Distanza</mat-label>
+          <input matInput type="number" name="tiroDistanza" formControlName="tiroDistanza" [(ngModel)]="initGiocatore.statistiche.tiroDistanza"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Tiro Al Volo</mat-label>
+          <input matInput type="number" name="tiroVolo" formControlName="tiroVolo"[(ngModel)]="initGiocatore.statistiche.tiroVolo" />
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Rigori</mat-label>
+          <input matInput type="number" name="rigori" formControlName="rigori" [(ngModel)]="initGiocatore.statistiche.rigori"/>
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Precisione Tiro</mat-label>
+          <input matInput type="number" name="precisioneTiro" formControlName="precisioneTiro" [(ngModel)]="initGiocatore.statistiche.precisioneTiro"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Dribbling</mat-label>
+          <input matInput type="number" name="dribbling" formControlName="dribbling" [(ngModel)]="initGiocatore.statistiche.dribbling"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Intercettazione</mat-label>
+          <input matInput type="number" name="intercettazione" formControlName="intercettazione" [(ngModel)]="initGiocatore.statistiche.intercettazione"/>
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Contrasto</mat-label>
+          <input matInput type="number" name="contrasto" formControlName="contrasto" [(ngModel)]="initGiocatore.statistiche.contrasto"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Resistenza</mat-label>
+          <input matInput type="number" name="resistenza" formControlName="resistenza" [(ngModel)]="initGiocatore.statistiche.resistenza"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>Forza Fisica</mat-label>
+          <input matInput type="number" name="forzaFisica" formControlName="forzaFisica" [(ngModel)]="initGiocatore.statistiche.forzaFisica"/>
+        </mat-form-field></td>
+      </tr>
+    </table>
+
+
+    <h2>CARRIERA</h2>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>scudetti</mat-label>
+          <input matInput type="number" name="scudetti" formControlName="scudetti" [(ngModel)]="initGiocatore.carriera.scudetti"/>
+        </mat-form-field></td>
+
+        <td><mat-form-field class="example-full-width">
+          <mat-label>champions</mat-label>
+          <input matInput type="number" name="champions" formControlName="champions" [(ngModel)]="initGiocatore.carriera.champions"/>
+        </mat-form-field></td>
+
+        <td><mat-form-field class="example-full-width">
+          <mat-label>coppe</mat-label>
+          <input matInput type="number" name="coppe" formControlName="coppe" [(ngModel)]="initGiocatore.carriera.coppe"/>
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>partiteGiocate</mat-label>
+          <input matInput type="number" name="partiteGiocate" formControlName="partiteGiocate" [(ngModel)]="initGiocatore.carriera.partiteGiocate"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>vittorie</mat-label>
+          <input matInput type="number" name="vittorie" formControlName="vittorie" [(ngModel)]="initGiocatore.carriera.vittorie"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>pareggi</mat-label>
+          <input matInput type="number" name="pareggi" formControlName="pareggi" [(ngModel)]="initGiocatore.carriera.pareggi"/>
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>sconfitte</mat-label>
+          <input matInput type="number" name="sconfitte" formControlName="sconfitte" [(ngModel)]="initGiocatore.carriera.sconfitte"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>goalFatti</mat-label>
+          <input matInput type="number" name="goalFatti" formControlName="goalFatti" [(ngModel)]="initGiocatore.carriera.goalFatti"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>goalSubiti</mat-label>
+          <input matInput type="number" name="goalSubiti" formControlName="goalSubiti" [(ngModel)]="initGiocatore.carriera.goalSubiti"/>
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>partiteGiocateA</mat-label>
+          <input matInput type="number" name="partiteGiocateA" formControlName="partiteGiocateA" [(ngModel)]="initGiocatore.carriera.partiteGiocateA"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>vittorieA</mat-label>
+          <input matInput type="number" name="vittorieA" formControlName="vittorieA" [(ngModel)]="initGiocatore.carriera.vittorieA"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>pareggiA</mat-label>
+          <input matInput type="number" name="pareggiA" formControlName="pareggiA" [(ngModel)]="initGiocatore.carriera.pareggiA"/>
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>sconfitteA</mat-label>
+          <input matInput type="number" name="sconfitteA" formControlName="sconfitteA" [(ngModel)]="initGiocatore.carriera.sconfitteA"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>goalFattiA</mat-label>
+          <input matInput type="number" name="goalFattiA" formControlName="goalFattiA" [(ngModel)]="initGiocatore.carriera.goalFattiA"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>goalSubitiA</mat-label>
+          <input matInput type="number" name="goalSubitiA" formControlName="goalSubitiA" [(ngModel)]="initGiocatore.carriera.goalSubitiA"/>
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>puntiA</mat-label>
+          <input matInput type="number" name="puntiA" formControlName="puntiA" [(ngModel)]="initGiocatore.carriera.puntiA"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>puntiChamp</mat-label>
+          <input matInput type="number" name="puntiChamp" formControlName="puntiChamp" [(ngModel)]="initGiocatore.carriera.puntiChamp"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>partiteGiocateChamp</mat-label>
+          <input matInput type="number" name="partiteGiocateChamp" formControlName="partiteGiocateChamp" [(ngModel)]="initGiocatore.carriera.partiteGiocateChamp"/>
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>vittorieChamp</mat-label>
+          <input matInput type="number" name="vittorieChamp" formControlName="vittorieChamp" [(ngModel)]="initGiocatore.carriera.vittorieChamp"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>pareggiChamp</mat-label>
+          <input matInput type="number" name="pareggiChamp" formControlName="pareggiChamp" [(ngModel)]="initGiocatore.carriera.pareggiChamp"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>sconfitteChamp</mat-label>
+          <input matInput type="number" name="sconfitteChamp" formControlName="sconfitteChamp" [(ngModel)]="initGiocatore.carriera.sconfitteChamp"/>
+        </mat-form-field></td>
+      </tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>goalFattiChamp</mat-label>
+          <input matInput type="number" name="goalFattiChamp" formControlName="goalFattiChamp" [(ngModel)]="initGiocatore.carriera.goalFattiChamp"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>goalSubitiChamp</mat-label>
+          <input matInput type="number" name="goalSubitiChamp" formControlName="goalSubitiChamp" [(ngModel)]="initGiocatore.carriera.goalSubitiChamp"/>
+        </mat-form-field></td>
+      </tr>
+    </table>
+
+    <h2>RECORD</h2>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalFattiFila</mat-label>
+          <input matInput type="number" name="recordGoalFattiFila" formControlName="recordGoalFattiFila" [(ngModel)]="initGiocatore.record.recordGoalFattiFila"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalSubitiFila</mat-label>
+          <input matInput type="number" name="recordGoalSubitiFila" formControlName="recordGoalSubitiFila" [(ngModel)]="initGiocatore.record.recordGoalSubitiFila"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalFattiFilaPartita</mat-label>
+          <input matInput type="number" name="recordGoalFattiFilaPartita" formControlName="recordGoalFattiFilaPartita" [(ngModel)]="initGiocatore.record.recordGoalFattiFilaPartita"/>
+        </mat-form-field></td>
+      <tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalSubitiFilaPartita</mat-label>
+          <input matInput type="number" name="recordGoalSubitiFilaPartita" formControlName="recordGoalSubitiFilaPartita" [(ngModel)]="initGiocatore.record.recordGoalSubitiFilaPartita"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalFattiPartita</mat-label>
+          <input matInput type="number" name="recordGoalFattiPartita" formControlName="recordGoalFattiPartita" [(ngModel)]="initGiocatore.record.recordGoalFattiPartita"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalSubitiPartita</mat-label>
+          <input matInput type="number" name="recordGoalSubitiPartita" formControlName="recordGoalSubitiPartita" [(ngModel)]="initGiocatore.record.recordGoalSubitiPartita"/>
+        </mat-form-field></td>
+      <tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalPunizione</mat-label>
+          <input matInput type="number" name="recordGoalPunizione" formControlName="recordGoalPunizione" [(ngModel)]="initGiocatore.record.recordGoalPunizione"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>recordGoalRigore</mat-label>
+          <input matInput type="number" name="recordGoalRigore" formControlName="recordGoalRigore" [(ngModel)]="initGiocatore.record.recordGoalRigore"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>doubleGoal</mat-label>
+          <input matInput type="number" name="doubleGoal" formControlName="doubleGoal" [(ngModel)]="initGiocatore.record.doubleGoal"/>
+        </mat-form-field></td>
+      <tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>multiGoal</mat-label>
+          <input matInput type="number" name="multiGoal" formControlName="multiGoal" [(ngModel)]="initGiocatore.record.multiGoal"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>ultraGoal</mat-label>
+          <input matInput type="number" name="ultraGoal" formControlName="ultraGoal" [(ngModel)]="initGiocatore.record.ultraGoal"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>fantasticGoal</mat-label>
+          <input matInput type="number" name="fantasticGoal" formControlName="fantasticGoal" [(ngModel)]="initGiocatore.record.fantasticGoal"/>
+        </mat-form-field></td>
+      <tr>
+      <tr>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>unbelievableGoal</mat-label>
+          <input matInput type="number" name="unbelievableGoal" formControlName="unbelievableGoal" [(ngModel)]="initGiocatore.record.unbelievableGoal"/>
+        </mat-form-field></td>
+        <td><mat-form-field class="example-full-width">
+          <mat-label>unbelievablePlusGoal</mat-label>
+          <input matInput type="number" name="unbelievablePlusGoal" formControlName="unbelievablePlusGoal" [(ngModel)]="initGiocatore.record.unbelievablePlusGoal"/>
+        </mat-form-field></td>
+
+      <tr>
+    </table>
+
+    <button mat-fab extended color="primary" (click)="annulla()">
+      <mat-icon>clear</mat-icon>
+      Annulla
+    </button>
+
+    <button mat-fab extended color="primary" type="submit()" [disabled]="!giocatoreForm.valid" >
+      <mat-icon>done</mat-icon>
+      Modifica
+    </button>
+
+  </form>
+  <mat-spinner *ngIf="caricamento"></mat-spinner>
+
+</div>
+

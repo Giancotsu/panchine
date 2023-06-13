@@ -1,0 +1,36 @@
+<div class="seven">
+  <h1>Stadi</h1>
+</div>
+<div>
+  <table mat-table [dataSource]="stadi" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef class="header"> Nome </th>
+      <td mat-cell *matCellDef="let stadio"> {{stadio.nome}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="posti">
+      <th mat-header-cell *matHeaderCellDef class="header"> posti </th>
+      <td mat-cell *matCellDef="let stadio"> {{stadio.posti}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="annoCreazione">
+      <th mat-header-cell *matHeaderCellDef class="header"> Anno Costruzione </th>
+      <td mat-cell *matCellDef="let stadio" >{{stadio.annoCreazione}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header"></tr>
+    <tr
+        mat-row
+        (click)="vediDettagli(stadio)"
+        [class.demo-row-is-clicked]
+        *matRowDef="let stadio; columns: displayedColumns;"
+    ></tr>
+  </table>
+
+  <div class="example-button-container add" *ngIf="isAdmin">
+    <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="creaStadio()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>

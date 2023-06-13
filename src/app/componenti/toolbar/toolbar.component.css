@@ -1,0 +1,38 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+span{
+  padding: 10px;
+  font-size: medium;
+}
+
+.example-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+button{
+ margin-left: 5px;
+ margin-right: 5px;
+
+}
+
+.menu{
+  margin-left: 40px;
+}
+
+.mat-toolbar-single-row{
+  height: 80px;
+}
+
+.content{
+  margin: auto;
+  width: 80%;
+  border: 3px;
+  padding: 30px;
+}
+
+.active{
+  background-color: rgb(116, 142, 192);
+}

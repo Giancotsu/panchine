@@ -1,0 +1,113 @@
+.example-card {
+  max-width: 50%;
+  margin: auto;
+  border: 3px;
+}
+
+.center{
+  text-align: center;
+  font-size: medium;
+  font-weight: bolder;
+}
+
+.header{
+  background-color: #3f51b5;
+  color: white;
+}
+
+.menu-bottoni{
+  display: flex;
+  width: min-content;
+  margin: 20px auto ;
+}
+
+.menu-bottoni button {
+  background-color: #3f51b5;
+  border: 2px solid black;
+  margin: 10px;
+  color: white;
+}
+
+.errore{
+  margin: 10px auto 10px auto;
+  color: red;
+  border: 2px solid red;
+  width: 400px;
+}
+
+.wrap {
+  width: 100%;
+  display:flex;
+  margin-top: 20px;
+}
+
+.column {
+  flex:1;
+  height: 60vh;
+}
+
+
+.row{
+  height: 20%;
+  width: 100%;
+  /* Center vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+}
+
+.mat-mdc-card-avatar {
+  height: 80px;
+  width: 80px;
+  border: 2px solid black;
+}
+
+.row div{
+  font-weight: bolder;
+  font-size: medium;
+  text-align: center;
+}
+
+#risultato{
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:row;
+
+}
+
+#risultato div{
+  font-weight: bolder;
+  font-size: xx-large;
+  margin: 0 20px;
+}
+
+.column .content{
+  width: 100%;
+  height: 100%;
+
+  font-weight: bolder;
+  font-size: large;
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.column .content p{
+  margin: 1.5vh 0;
+}
+
+#goalMinCasa{
+  text-align: center;
+  font-weight: 100;
+  font-size: xx-small;
+  padding-bottom: 5px;
+}
+
+#goalMinTrasferta{
+  text-align: center;
+  font-weight: 100;
+  font-size: xx-small;
+}

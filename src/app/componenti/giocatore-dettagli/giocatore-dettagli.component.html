@@ -1,0 +1,96 @@
+<mat-card class="example-card">
+  <mat-card-header class="header">
+    <div mat-card-avatar [ngStyle]="{'background-image': 'url(' + giocatoreDettagli.immagineProfiloUrl + ')', 'background-size': 'cover'  }" ></div>
+    <mat-card-title>{{giocatoreDettagli.nome}} {{giocatoreDettagli.cognome}}, {{giocatoreDettagli.eta}} anni</mat-card-title>
+    <mat-card-subtitle class="header">Calciatore</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="menu-bottoni" >
+      <button mat-button (click)="mostraStatistiche()">STATISTICHE</button>
+      <button mat-button (click)="mostraCarriera()">CARRIERA</button>
+      <button mat-button (click)="mostraRecord()">RECORD</button>
+    </div>
+    <div *ngIf="showStatistiche">
+      <h1>STATISTICHE</h1>
+      <p class="center">FINALIZZAZIONE: {{giocatoreDettagli.statistiche.finalizzazione}}</p>
+      <p class="center">POTENZA TIRO: {{giocatoreDettagli.statistiche.potenzaTiro}}</p>
+      <p class="center">PRECISIONE TIRO: {{giocatoreDettagli.statistiche.precisioneTiro}}</p>
+      <p class="center">TIRO DALLA DISTANZA: {{giocatoreDettagli.statistiche.tiroDistanza}}</p>
+      <p class="center">TIRO A VOLO: {{giocatoreDettagli.statistiche.tiroVolo}}</p>
+      <p class="center">DRIBBLING: {{giocatoreDettagli.statistiche.dribbling}}</p>
+      <p class="center">VELOCITA': {{giocatoreDettagli.statistiche.velocita}}</p>
+      <p class="center">RIGORI: {{giocatoreDettagli.statistiche.rigori}}</p>
+      <p class="center">CONTRASTO: {{giocatoreDettagli.statistiche.contrasto}}</p>
+      <p class="center">FORZA FISICA: {{giocatoreDettagli.statistiche.forzaFisica}}</p>
+      <p class="center">RESISTENZA: {{giocatoreDettagli.statistiche.resistenza}}</p>
+    </div>
+
+    <div *ngIf="showRecord">
+      <h1>RECORD</h1>
+      <p class="center">GOAL FATTI DI FILA(in più partite): {{giocatoreDettagli.record.recordGoalFattiFila}}</p>
+      <p class="center">GOAL FATTI DI FILA IN UNA PARTITA: {{giocatoreDettagli.record.recordGoalFattiFilaPartita}}</p>
+      <p class="center">MASSIMO DI GOAL FATTI IN UNA PARTITA: {{giocatoreDettagli.record.recordGoalFattiPartita}}</p>
+      <p class="center">GOAL SUBITI DI FILA(in più partite): {{giocatoreDettagli.record.recordGoalSubitiFila}}</p>
+      <p class="center">GOAL SUBITI DI FILA IN UNA PARTITA: {{giocatoreDettagli.record.recordGoalSubitiFilaPartita}}</p>
+      <p class="center">MASSIMO DI GOAL SUBITI IN UNA PARTITA: {{giocatoreDettagli.record.recordGoalSubitiPartita}}</p>
+      <p class="center">GOAL SU PUNIZIONE: {{giocatoreDettagli.record.recordGoalPunizione}}</p>
+      <p class="center">GOAL SU RIGORE: {{giocatoreDettagli.record.recordGoalRigore}}</p>
+      <p class="center">DOUBLE GOAL: {{giocatoreDettagli.record.doubleGoal}}</p>
+      <p class="center">MULTI GOAL: {{giocatoreDettagli.record.multiGoal}}</p>
+      <p class="center">ULTRA GOAL': {{giocatoreDettagli.record.ultraGoal}}</p>
+      <p class="center">FANTASTIC GOAL: {{giocatoreDettagli.record.fantasticGoal}}</p>
+      <p class="center">UNBELIEVABLE GOAL': {{giocatoreDettagli.record.unbelievableGoal}}</p>
+      <p class="center">UNBELIEVABLE PLUS GOAL : {{giocatoreDettagli.record.unbelievablePlusGoal}}</p>
+    </div>
+
+    <div *ngIf="showCarriera">
+      <h1>CARRIERA</h1>
+      <h2>COPPE:</h2>
+      <p class="center">SCUDETTI VINTI: {{giocatoreDettagli.carriera.scudetti}}</p>
+      <p class="center">CHAMPIONS VINTE: {{giocatoreDettagli.carriera.champions}}</p>
+      <p class="center">COPPE VINTE: {{giocatoreDettagli.carriera.coppe}}</p>
+
+      <h2>TUTTO:</h2>
+      <p class="center">PARTITE GIOCATE: {{giocatoreDettagli.carriera.partiteGiocate}}</p>
+      <p class="center">VITTORIE: {{giocatoreDettagli.carriera.vittorie}}</p>
+      <p class="center">PAREGGI: {{giocatoreDettagli.carriera.pareggi}}</p>
+      <p class="center">SCONFITTE: {{giocatoreDettagli.carriera.sconfitte}}</p>
+      <p class="center">GOAL FATTI: {{giocatoreDettagli.carriera.goalFatti}}</p>
+      <p class="center">GOAL SUBITI: {{giocatoreDettagli.carriera.goalSubiti}}</p>
+
+      <h2>SERIE A:</h2>
+      <p class="center">PARTITE GIOCATE IN SERIE A: {{giocatoreDettagli.carriera.partiteGiocateA}}</p>
+      <p class="center">VITTORIE IN SERIE A: {{giocatoreDettagli.carriera.vittorieA}}</p>
+      <p class="center">PAREGGI IN SERIE A: {{giocatoreDettagli.carriera.pareggiA}}</p>
+      <p class="center">SCONFITTE IN SERIE A: {{giocatoreDettagli.carriera.sconfitteA}}</p>
+      <p class="center">GOAL FATTI IN SERIE A: {{giocatoreDettagli.carriera.goalFattiA}}</p>
+      <p class="center">GOAL SUBITI IN SERIE A: {{giocatoreDettagli.carriera.goalSubitiA}}</p>
+      <p class="center">PUNTI FATTI IN SERIE A: {{giocatoreDettagli.carriera.puntiA}}</p>
+
+      <h2>CHAMPIONS LEAGUE:</h2>
+      <p class="center">PARTITE GIOCATE IN CHAMPIONS: {{giocatoreDettagli.carriera.partiteGiocateChamp}}</p>
+      <p class="center">VITTORIE IN CHAMPIONS: {{giocatoreDettagli.carriera.vittorieChamp}}</p>
+      <p class="center">PAREGGI IN CHAMPIONS: {{giocatoreDettagli.carriera.pareggiChamp}}</p>
+      <p class="center">SCONFITTE IN CHAMPIONS: {{giocatoreDettagli.carriera.sconfitteChamp}}</p>
+      <p class="center">GOAL FATTI IN CHAMPIONS: {{giocatoreDettagli.carriera.goalFattiChamp}}</p>
+      <p class="center">GOAL SUBITI IN CHAMPIONS: {{giocatoreDettagli.carriera.goalSubitiChamp}}</p>
+      <p class="center">PUNTI FATTI IN CHAMPIONS: {{giocatoreDettagli.carriera.puntiChamp}}</p>
+    </div>
+  </mat-card-content>
+
+  <p class="center errore" *ngIf="mostraErrore">Non si può eliminare</p>
+
+  <div class="menu-bottoni" *ngIf="isAdmin">
+    <button mat-fab extended color="primary" (click)="modificaGiocatore()">
+      <mat-icon>edit</mat-icon>
+      Modifica
+    </button>
+    <button mat-fab extended color="primary" (click)="eliminaGiocatore()">
+      <mat-icon>delete</mat-icon>
+      Elimina
+    </button>
+  </div>
+  <mat-card-actions>
+    <button mat-button (click)="tornaIndietro()"><mat-icon>arrow_back_ios</mat-icon></button>
+  </mat-card-actions>
+</mat-card>

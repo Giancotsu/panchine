@@ -284,6 +284,8 @@ export class AggiungiPartitaComponent implements OnInit{
         giocatore.record.fantasticGoal += this.partitaform.value.fantasticGoalIC;
         giocatore.record.unbelievableGoal += this.partitaform.value.unbelievableGoalIC;
         giocatore.record.unbelievablePlusGoal += this.partitaform.value.unbelievablePlusGoalIC;
+        giocatore.record.recordGoalPunizione += this.partitaform.value.punizioniIC;
+        giocatore.record.recordGoalRigore += this.partitaform.value.rigoriIC;
 
         this.giocatoreService.modificaGiocatore(giocatore).subscribe(response => console.log(response));
       })
@@ -361,6 +363,8 @@ export class AggiungiPartitaComponent implements OnInit{
         giocatore.record.fantasticGoal += this.partitaform.value.fantasticGoalFC;
         giocatore.record.unbelievableGoal += this.partitaform.value.unbelievableGoalFC;
         giocatore.record.unbelievablePlusGoal += this.partitaform.value.unbelievablePlusGoalFC;
+        giocatore.record.recordGoalPunizione += this.partitaform.value.punizioniFC;
+        giocatore.record.recordGoalRigore += this.partitaform.value.rigoriFC;
 
         this.giocatoreService.modificaGiocatore(giocatore).subscribe(response => console.log(response));
       })
